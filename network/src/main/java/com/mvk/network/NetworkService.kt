@@ -1,4 +1,8 @@
 package com.mvk.network
 
-class NetworkService {
+import javax.inject.Singleton
+
+@Singleton
+interface NetworkService {
+
 }

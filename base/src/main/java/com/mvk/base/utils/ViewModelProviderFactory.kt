@@ -1,4 +1,4 @@
-package com.mvk.template
+package com.mvk.instagram.utils
 
 
 import androidx.lifecycle.ViewModel

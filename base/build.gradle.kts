@@ -26,8 +26,6 @@ android {
 
     buildTypes {
         getByName("debug") {
-            buildConfigField("String", "API_KEY", "\"\"")
-            buildConfigField("String", "BASE_URL", "\"\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -35,8 +33,6 @@ android {
             )
         }
         getByName("release") {
-            buildConfigField("String", "API_KEY", "\"\"")
-            buildConfigField("String", "BASE_URL", "\"\"")
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
