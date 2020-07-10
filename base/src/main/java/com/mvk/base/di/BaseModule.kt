@@ -2,7 +2,9 @@ package com.mvk.base.di
 
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.room.Room
 import com.mvk.base.utils.network.NetworkHelper
+import com.mvk.database.db.DatabaseService
 import com.mvk.network.BuildConfig
 import com.mvk.network.NetworkService
 import com.mvk.network.Networking
@@ -22,13 +24,13 @@ class BaseModule {
     fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences =
         context.getSharedPreferences("bootcamp-instagram-project-prefs", Context.MODE_PRIVATE)
 
-//    @Provides
-//    @Singleton
-//    fun provideDatabaseService(@ApplicationContext context: Context): DatabaseService =
-//        Room.databaseBuilder(
-//            context, DatabaseService::class.java,
-//            "bootcamp-instagram-project-db"
-//        ).build()
+    @Provides
+    @Singleton
+    fun provideDatabaseService(@ApplicationContext context: Context): DatabaseService =
+        Room.databaseBuilder(
+            context, DatabaseService::class.java,
+            "bootcamp-instagram-project-db"
+        ).build()
 
     @Provides
     @Singleton

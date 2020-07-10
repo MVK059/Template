@@ -61,6 +61,7 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(project(":base"))
     implementation(project(":network"))
+    implementation(project(":database"))
 
     // Individual dependencies
     implementation(Dependencies.kotlin)

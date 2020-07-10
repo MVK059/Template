@@ -1,18 +1,14 @@
 plugins {
     id("com.android.library")
-    id("kotlinx-serialization")
     kotlin("android")
     kotlin("android.extensions")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
-    id("kotlin-android")
 }
-
 
 android {
     compileSdkVersion(Application.COMPILE_SDK_VERSION)
     buildToolsVersion = Versions.BUILD_TOOLS_VERSION
-
 
     defaultConfig {
         minSdkVersion(Application.MIN_SDK_VERSION)
@@ -27,10 +23,7 @@ android {
     buildTypes {
         getByName("debug") {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
         getByName("release") {
             isMinifyEnabled = true
@@ -38,35 +31,21 @@ android {
         }
     }
 
-    dataBinding {
-        isEnabled = true
-    }
-
     kapt {
         correctErrorTypes = true
     }
+
 }
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation(project(":network"))
-    implementation(project(":database"))
-
     implementation(Dependencies.kotlin)
-    implementation(Dependencies.retrofit)
     implementation(Dependencies.coroutines)
-    implementation(Dependencies.recyclerView)
-    implementation(Dependencies.timber)
-    implementation(Dependencies.gson)
 
     appCompat()
     defaultTests()
-    kotlinSerialization()
-    lifecycle()
     room()
+    lifecycle()
     hilt()
-    rxjava()
-    glide()
-
 }
