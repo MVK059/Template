@@ -8,6 +8,7 @@ import com.mvk.base.ui.BaseViewModel
 import com.mvk.base.utils.network.NetworkHelper
 import com.mvk.instagram.utils.ViewModelProviderFactory
 import com.mvk.template.BR
+import com.mvk.template.ui.MainViewModel
 import com.mvk.template.R
 import com.mvk.template.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
