@@ -1,2 +1,4 @@
+include ':base'
+include ':network'
 include ':app'
 rootProject.name = "Template"
